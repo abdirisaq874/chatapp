@@ -10,10 +10,7 @@ const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 
-server.listen(3000,()=>{
-    console.log("Server is up on "+ 3000)
-})
-let count =0
+server.listen(3000)
 
 const publicDirectory = path.join(__dirname,"../public")
 
