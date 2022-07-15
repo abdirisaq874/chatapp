@@ -6,11 +6,15 @@ let Filter = require("bad-words")
 const {generateMessage} = require('./utils/message')
 const {addUser,RemoveUser,getUser,getUsersInRoom,users} = require('./utils/users')
 
+const port = process.env.PORT || 3000
+
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
 
-server.listen(3000)
+server.listen(port,()=>{
+    console.log("server is up on port " + port)
+})
 
 const publicDirectory = path.join(__dirname,"../public")
 
